@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    #btnSubir {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none; /* Oculto por defecto */
+      z-index: 99;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 22px;
+    }
+  </style>
+  </head>
+  <body>
+    <!--MENU-->
+
+    <div class="contaier">
+            <nav class="navbar navbar-expand-md bg-body-tertiary ">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="#">Radio Energia Positiva</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#nosotros">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#djs">Nuestros DJ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+            </nav>
+
+     <!--BOTON SCROLL-->       
+
+  <!-- Botón flotante con icono -->
+  <button id="btnSubir" class="btn btn-dark d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mostrar/ocultar el botón al hacer scroll
+    window.onscroll = function () {
+      let btn = document.getElementById("btnSubir");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "flex";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    // Subir suavemente al inicio
+    document.getElementById("btnSubir").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+
+      <!--CARRUSEL-->
+
+
+            <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div style="height: 600px; overflow: hidden;">
+        <img src="imagenes/linda-chica-rubia-escuchando-musica-junto-la-noria.jpg" class="d-block w-100" alt="Yulliet" style="height: 100%; object-fit: cover;">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div style="height: 600px; overflow: hidden;">
+        <img src="imagenes/appenergia.png" class="d-block w-100" alt="..." style="height: 100%; object-fit: cover;">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div style="height: 600px; overflow: hidden;">
+        <img src="imagenes/on air.png" class="d-block w-100" alt="..." style="height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+      <!--SECCION DE DESCARGA DE APP-->
+
+<div class="container-fluid bg-light py-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>¡Descarga Nuestra App Gratuita!</h1>
+    </div>
+    <div class="col-12 text-center">
+      <a href="https://play.google.com/store/apps/details?id=streamingpro.rep" 
+         target="_blank" 
+         class="text-decoration-none text-dark">
+        <i class="bi bi-google-play" style="font-size: 3rem;"></i>
+        <p class="mb-0 fs-2">Google Play</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!--SECCION DE RADIO EN VIVO-->
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body text-center">
+          <h3 class="card-title mb-3">📻 Radio en vivo</h3>
+          <div id="nowPlaying" class="mb-3">
+            <span class="fw-bold">Canción:</span> <span id="songTitle">No disponible</span><br>
+            <span class="fw-bold">DJ:</span> <span id="djName">No disponible</span>
+          </div>
+          <audio id="radioPlayer" class="w-100 mb-3" controls>
+            <source src="https://sonic.streamingchilenos.com" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+          <div>
+            <button id="playBtn" class="btn btn-primary btn-lg">▶ Reproducir</button>
+            <button id="pauseBtn" class="btn btn-secondary btn-lg d-none">⏸ Pausar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const radio = document.getElementById("radioPlayer");
+  const playBtn = document.getElementById("playBtn");
+  const pauseBtn = document.getElementById("pauseBtn");
+
+  playBtn.addEventListener("click", () => {
+    radio.play();
+    playBtn.classList.add("d-none");
+    pauseBtn.classList.remove("d-none");
+  });
+
+  pauseBtn.addEventListener("click", () => {
+    radio.pause();
+    pauseBtn.classList.add("d-none");
+    playBtn.classList.remove("d-none");
+  });
+
+  // Ejemplo para mostrar canción y DJ cuando tengas el endpoint
+  function fetchNowPlaying() {
+    fetch('URL_DEL_ENDPOINT_AQUI')
+      .then(response => response.json())
+      .then(data => {
+        // Ajusta estas líneas según la estructura real del JSON
+        const song = data.icestats?.source?.title || "No disponible";
+        const dj = data.icestats?.source?.server_name || "No disponible";
+        document.getElementById('songTitle').textContent = song;
+        document.getElementById('djName').textContent = dj;
+      })
+      .catch(() => {
+        document.getElementById('songTitle').textContent = "No disponible";
+        document.getElementById('djName').textContent = "No disponible";
+      });
+  }
+
+  setInterval(fetchNowPlaying, 15000);
+  fetchNowPlaying();
+</script>
+
+<!--SECCION DE NOSOTROS-->
+
+<div id="nosotros" class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center mb-4">
+      <h2>Acerca de Nosotros</h2>
+      <p class="lead">En Radio Energía Positiva, creemos en el poder de la música para transformar vidas. Nuestra misión es llevar alegría, inspiración y buena vibra a cada rincón del mundo a través de nuestras transmisiones en vivo. Con una programación diversa que abarca desde los clásicos hasta los éxitos más recientes, nos esforzamos por crear una experiencia auditiva única para nuestros oyentes.</p>
+    </div>
+  </div>
+
+
+<!--SECCION DE DJS EN CARRUSEL-->
+<div id="djs" class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center mb-4">
+      <h2>Nuestros DJ</h2>
+    </div>
+    <div class="col-12">
+      <div id="djsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/yulliet.png" class="img-fluid rounded-start" alt="DJ Yuliett">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Yuliett</h5>
+                    <p class="card-text">Hola, soy Yuliett. Te invito a recorrer conmigo la música tropical, de lo retro a lo moderno. Ven a disfrutar, bailar y sonreír en Radio Energía Positiva. Porque la vida es pasión… ¡y hay que vivirla así!</p>
+                    <p class="card-text"><small class="text-body-secondary">Miércoles desde las 22 hrs</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/djnelson.png" class="img-fluid rounded-start" alt="DJ Nelson">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Nelson</h5>
+                    <p class="card-text">Hola, soy Dj Nelson. Te invito a disfrutar mis programas llenos de buena vibra, mezclas en vivo y pura entretención. Ven a vivir la música conmigo en Radio Energía Positiva.</p>
+                    <p class="card-text"><small class="text-body-secondary">**por confirmar**</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/djjota.png" class="img-fluid rounded-start" alt="DJ Jota">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Jota</h5>
+                    <p class="card-text">Soy Dj Jota y en Radio Energía Positiva te traigo mezclas en vivo, distintos estilos y toda la energía de una fiesta real. ¡Quédate conmigo y vive la música al máximo!</p>
+                    <p class="card-text"><small class="text-body-secondary">Viernes desde las 22 hrs</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/djnachito.png" class="img-fluid rounded-start" alt="DJ Nachito">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Nachito</h5>
+                    <p class="card-text">Hola, soy Nachito Mix Sound de Cauquenes. Te invito a mi programa de rancheras llenas de ritmo y alegría, y a revivir los clásicos sound de siempre, aquí en Radio Energía Positiva.</p>
+                    <p class="card-text"><small class="text-body-secondary">**Por Confirmar**</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="carousel-item">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/djghost.png" class="img-fluid rounded-start" alt="DJ Ghost">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Ghost</h5>
+                    <p class="card-text">Hola, somos DJ Ghost y el compita Rodrigo. Te invitamos a ser parte de Nación MP3: un viaje por distintos estilos musicales, con buena info y la mejor compañía en tus tardes. Aquí, en Radio Energía Positiva.</p>
+                    <p class="card-text"><small class="text-body-secondary">Jueves desde las 22 hrs</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="carousel-item">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/djlokillo.png" class="img-fluid rounded-start" alt="DJ Lokillo">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Lokillo</h5>
+                    <p class="card-text">Hola, soy Lokillo. Vivo y respiro música, y quiero compartir contigo lo mejor del retro: desde lo bailable en Colección Retro hasta lo romántico en Colección Retro Romántica. Acompáñame en Radio Energía Positiva.</p>
+                    <p class="card-text"><small class="text-body-secondary">Lunes desde las 22 hrs</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 7 -->
+          <div class="carousel-item">
+            <div class="card mx-auto" style="max-width: 600px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="imagenes/djdeadpool.jpg" class="img-fluid rounded-start" alt="DJ Deadpool">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">DJ Deadpool</h5>
+                    <p class="card-text">Hola, soy Dj DeadPool. Los martes revivimos la música del ayer, y viernes y sábado bailamos sin parar. Pide tus canciones, manda saludos y acompáñame en Radio Energía Positiva.</p>
+                    <p class="card-text"><small class="text-body-secondary">Martes desde las 22 hrs</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Controles del carrusel con flechas más negras -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#djsCarousel" data-bs-slide="prev" style="filter: brightness(0) invert(1);">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #111;"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#djsCarousel" data-bs-slide="next" style="filter: brightness(0) invert(1);">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #111;"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--CONTACTO-->
+
+<div id="contacto" class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 text-center mb-4">
+      <h2>Contacto</h2>
+      <p class="lead">¿Tienes alguna pregunta, sugerencia o simplemente quieres saludar? ¡Nos encantaría saber de ti! En Radio Energía Positiva, valoramos a nuestra comunidad y estamos aquí para escucharte. Ya sea que quieras compartir tus ideas, solicitar una canción o simplemente decir hola, no dudes en ponerte en contacto con nosotros. Puedes enviarnos un mensaje por whatsapp y nuestro equipo estará encantado de responderte lo antes posible. ¡Esperamos saber de ti pronto!</p>
+    </div>
+    <div class="col-12 text-center">
+      <a href="https://wa.me/56979444345" target="_blank" class="btn btn-success btn-lg">
+        <i class="bi bi-whatsapp"></i> Chatea con nosotros por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--REDES SOCIALES SOLO LOGOS-->
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-12 text-center mb-4">
+      <h2>Síguenos en nuestras redes sociales</h2>
+      <p class="lead">Conéctate con Radio Energía Positiva en tus plataformas favoritas:</p>
+    </div>
+    <div class="col-12 text-center">
+      <a href="https://www.facebook.com/ra.dio.positiva" target="_blank" class="m-2">
+        <i class="bi bi-facebook" style="font-size: 3rem; color: #1877f3;"></i>
+      </a>
+      <a href="https://www.instagram.com/radio_energiapositiva" target="_blank" class="m-2">
+        <i class="bi bi-instagram" style="font-size: 3rem; color: #e4405f;"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!--FOOTER-->
+
+<footer class="bg-dark text-white py-3 w-100">
+  <div class="container-fluid px-4">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8 text-center text-md-start">
+        <p class="mb-0">&copy; 2025 Radio Energía Positiva. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-12 col-md-4 text-center text-md-end mt-2 mt-md-0">
+        <a href="privacidad.html" class="text-white text-decoration-underline">Políticas de Privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  </body>
+</html>
